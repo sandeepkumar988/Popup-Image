@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Images Gallery</h1>
+        <div class="image-container">
+            <div class="image"><img src="images/8.jpg" alt=""></div>
+            <div class="image"><img src="images/9.jpg" alt=""></div>
+            <div class="image"><img src="images/3.webp" alt=""></div>
+            <div class="image"><img src="images/4.webp" alt=""></div>
+            <div class="image"><img src="images/5.webp" alt=""></div>
+            <div class="image"><img src="images/6.webp" alt=""></div>
+            <div class="image"><img src="images/7.webp" alt=""></div>
+            <div class="image"><img src="images/1.webp" alt=""></div>
+            <div class="image"><img src="images/2.webp" alt=""></div>
+        </div>
+
+    <div class="img-popup">
+        <span>&times;</span>
+        <img src="" alt="">
+    </div>
+
+    </div>
+
+<script>
+    const imgContainer = document.querySelectorAll('.image-container img');
+    const imgPopup = document.querySelector('.img-popup');
+    const popImg = document.querySelector('.img-popup img');
+    const popSpan = document.querySelector('.img-popup span');
+
+    const img = imgContainer.forEach(image => {
+        image.addEventListener("click", () => {
+            imgPopup.style.display = "block";
+            popImg.src = image.getAttribute('src');
+        })
+    });
+
+    const popUpSpan = popSpan.addEventListener("click", () => {
+        imgPopup.style.display = "none";
+    })
+</script>
+
+</body>
+</html>
